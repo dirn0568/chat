@@ -17,7 +17,7 @@
 			for(int i = 0; i <= roomLIST.size(); i++) {
 	%>
 			<div align="right" style="background:#FFE400;">
-				<a href="broadcast.jsp">
+				<a href="broadcast.jsp?roomNAME=<%= roomLIST.get(i).getRoomNAME() %>">
 					<tr>
 						<td><%= roomLIST.get(i).getRoomID() %></td>
 						<td><%= roomLIST.get(i).getRoomNAME() %></td>

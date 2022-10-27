@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+		String roomNAME = "";
+		if (request.getParameter("roomNAME") != null) {
+			roomNAME = request.getParameter("roomNAME");
+		}
+	%>
     <fieldset>
         <textarea id="messageWindow" rows="10" cols="50" readonly="true"></textarea>
         <br/>
@@ -20,7 +26,7 @@
 </body>
     <script type="text/javascript">
         var textarea = document.getElementById("messageWindow");
-        var webSocket = new WebSocket('ws://localhost:8080/project23/broadcasting');
+        var webSocket = new WebSocket('ws://localhost:8080/project23/broadcasting?<%= roomNAME %>');
         var inputMessage = document.getElementById('inputMessage');
 	    webSocket.onerror = function(event) {
 	      onError(event)

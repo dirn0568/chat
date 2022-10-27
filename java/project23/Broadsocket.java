@@ -14,11 +14,16 @@ import javax.websocket.server.ServerEndpoint;
 
 import chat.chatDAO;
 
+
 @ServerEndpoint("/broadcasting")
 public class Broadsocket {
-
-	private static Set<Session> clients = Collections
-			.synchronizedSet(new HashSet<Session>());
+	public Broadsocket() {
+		String roomNAME = "";
+		if (request.getParameter("roomNAME") != null) {
+			roomNAME = request.getParameter("roomNAME");
+		}
+	}
+	private static Set<Session> clients = Collections.synchronizedSet(new HashSet<Session>());
 
 	@OnMessage
 	public void onMessage(String message, Session session) throws IOException {
