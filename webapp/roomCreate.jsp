@@ -10,6 +10,7 @@
 	<form method="POST" action="roomCreateAction.jsp">
 		<input type="text" name="roomNAME">
 		<input type="submit" value="방만들기">
+		<input type="submit" value="방만들기">
 	</form>
 </body>
 </html>
